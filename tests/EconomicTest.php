@@ -1,18 +1,17 @@
 <?php
 
 
-use Serringer\Economic\Economic;
 use PHPUnit\Framework\TestCase;
 
 class EconomicTest extends TestCase
 {
     public $tokens = [
         'secret' => [
-            'FysDGcnv13KQh5s6LHr5DoC36X3DyVSVz2UemBwNACw1'
+            'FysDGcnv13KQh5s6LHr5DoC36X3DyVSVz2UemBwNACw1',
         ],
         'agreement' => [
-            '8dWxoeqaoVxRhDE4ZFs0miD6Hf1xiDgpiMGsbu9uyw01'
-        ]
+            '8dWxoeqaoVxRhDE4ZFs0miD6Hf1xiDgpiMGsbu9uyw01',
+        ],
     ];
 
     /** @test */
@@ -109,4 +108,3 @@ class EconomicTest extends TestCase
             )->create();
     }
 }
-

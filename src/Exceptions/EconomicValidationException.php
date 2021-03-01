@@ -28,5 +28,4 @@ class EconomicValidationException extends \Exception
     {
         $this->message = $this->orgMessage.implode(', ', $this->properties).'.';
     }
-
 }

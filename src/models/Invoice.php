@@ -85,7 +85,7 @@ class Invoice
     {
         $this->layout = [
             'layoutNumber' => $layout->layoutNumber,
-            'layoutSelf' => $layout->self
+            'layoutSelf' => $layout->self,
         ];
 
         return $this;
@@ -136,7 +136,7 @@ class Invoice
     {
         $this->references = [
             'salesPerson' => $references->salesPerson ?? null,
-            'vendorReference' => $references->vendorReference ?? null
+            'vendorReference' => $references->vendorReference ?? null,
         ];
 
         return $this;
@@ -178,7 +178,7 @@ class Invoice
     {
         $this->recipient = [
             'recipientName' => $recipient->name,
-            'recipientVatZone' => $recipient->vatZone ?? null
+            'recipientVatZone' => $recipient->vatZone ?? null,
         ];
 
         return $this;
@@ -193,7 +193,7 @@ class Invoice
     {
         $this->paymentTerms = [
             'paymentTermsNumber' => $paymentTerms->paymentTermsNumber,
-            'paymentTermsSelf' => $paymentTerms->self
+            'paymentTermsSelf' => $paymentTerms->self,
         ];
 
         return $this;
@@ -217,7 +217,7 @@ class Invoice
     {
         $this->customer = [
             'costumerNumber' => $customer->customerNumber,
-            'customerSelf' => $customer->self
+            'customerSelf' => $customer->self,
         ];
 
         return $this;

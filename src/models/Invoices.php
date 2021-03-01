@@ -3,7 +3,6 @@
 
 namespace Serringer\Economic\Models;
 
-
 class Invoices
 {
     private $currency;
@@ -63,7 +62,6 @@ class Invoices
         $this->bookedInvoiceNumber = $data['bookedInvoiceNumber'] ?? null;
         $this->vatAmount = $data['vatAmount'] ?? null;
     }
-
 
     /**
      * @return mixed
@@ -320,6 +318,4 @@ class Invoices
     {
         $this->vatAmount = $vatAmount;
     }
-
-
 }

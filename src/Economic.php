@@ -2,7 +2,6 @@
 
 namespace Serringer\Economic;
 
-
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
@@ -12,11 +11,11 @@ use Serringer\Economic\models\customer;
 use Serringer\Economic\Models\CustomerCollection;
 use Serringer\Economic\Models\DraftInvoice;
 use Serringer\Economic\Models\Product;
-use function PHPUnit\Framework\throwException;
 
 class Economic
 {
-    private $appSecretToken, $agreementGrantToken;
+    private $appSecretToken;
+    private $agreementGrantToken;
     private $baseUrl = 'https://restapi.e-conomic.com';
     private $contentType = 'application/json';
     private $headers;

@@ -3,7 +3,6 @@
 
 namespace Serringer\Economic\Entities;
 
-
 class Lines
 {
     private $lines = [];
@@ -20,6 +19,7 @@ class Lines
     public function addLine(array $line)
     {
         $this->lines[] = $line;
+
         return $this;
     }
 

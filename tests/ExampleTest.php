@@ -3,7 +3,6 @@
 namespace Serringer\Economic\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Serringer\Economic\Economic;
 
 class ExampleTest extends TestCase
 {

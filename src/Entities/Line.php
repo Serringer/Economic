@@ -3,7 +3,6 @@
 
 namespace Serringer\Economic\Entities;
 
-
 class Line
 {
     public $description;

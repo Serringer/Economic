@@ -151,7 +151,7 @@ class DraftInvoice
         $this->api->cleanObject($data);
 
         $validator = DraftInvoiceValidator::getValidator();
-        if (!$validator->validate($this)) {
+        if (! $validator->validate($this)) {
             throw $validator->getException($this);
         }
 
@@ -551,7 +551,7 @@ class DraftInvoice
     {
         $this->customer = [
             "customerNumber" => $customer->getCustomerNumber(),
-            "self" => $customer->getSelf()
+            "self" => $customer->getSelf(),
         ];
 
         return $this;
@@ -597,7 +597,7 @@ class DraftInvoice
         if (is_array($layout)) {
             $this->layout = [
                 "layoutNumber" => $layout->getLayoutNumber(),
-                "self" => $layout->getSelf()
+                "self" => $layout->getSelf(),
             ];
         } else {
             $this->layout = ["layoutNumber" => $layout];
@@ -633,7 +633,7 @@ class DraftInvoice
     {
         $this->paymentTerms = [
             "paymentTermsNumber" => $paymentTerms->paymentTermsNumber,
-            "self" => $paymentTerms->self
+            "self" => $paymentTerms->self,
         ];
 
         return $this;
@@ -669,7 +669,7 @@ class DraftInvoice
         if ($recipient != null) {
             $this->recipient = [
                 "name" => $recipient["name"],
-                "vatZone" => $recipient["vatZone"]
+                "vatZone" => $recipient["vatZone"],
             ];
         }
 

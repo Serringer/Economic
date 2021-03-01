@@ -3,7 +3,6 @@
 
 namespace Serringer\Economic\Validators;
 
-use Exception;
 use Serringer\Economic\Exceptions\EconomicValidationException;
 use Serringer\Economic\Models\DraftInvoice;
 

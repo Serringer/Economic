@@ -3,7 +3,6 @@
 
 namespace Serringer\Economic\Models;
 
-
 use Serringer\Economic\Economic;
 use Serringer\Economic\Filter;
 

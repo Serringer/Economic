@@ -3,9 +3,7 @@
 
 namespace Serringer\Economic\Models;
 
-
 use Serringer\Economic\Economic;
-use function PHPUnit\Framework\throwException;
 
 class Customer
 {
@@ -91,14 +89,18 @@ class Customer
 
     public function draftInvoices()
     {
-        return $this->api->collection('/customers/'.$this->getCustomerNumber().'/invoices/drafts?',
-            new DraftInvoice($this->api));
+        return $this->api->collection(
+            '/customers/'.$this->getCustomerNumber().'/invoices/drafts?',
+            new DraftInvoice($this->api)
+        );
     }
 
     public function bookedInvoices()
     {
-        return $this->api->collection('/customers/'.$this->getCustomerNumber().'/invoices/booked?',
-            new Invoice($this->api));
+        return $this->api->collection(
+            '/customers/'.$this->getCustomerNumber().'/invoices/booked?',
+            new Invoice($this->api)
+        );
     }
 
     public function getCustomerContact(): ?CustomerContact
@@ -153,7 +155,7 @@ class Customer
     {
         return [
             'totals' => [
-                'booked' => $totals->booked, 'drafts' => $totals->drafts
+                'booked' => $totals->booked, 'drafts' => $totals->drafts,
             ],
             'totals_self' => $totals->self,
         ];
@@ -179,8 +181,10 @@ class Customer
     public function setDefaultDeliveryLocation($defaultDeliveryLocation = null)
     {
         if (isset($defaultDeliveryLocation)) {
-            $this->defaultDeliveryLocation = new DefaultDeliveryLocation($defaultDeliveryLocation->deliveryLocationNumber,
-                $defaultDeliveryLocation->self);
+            $this->defaultDeliveryLocation = new DefaultDeliveryLocation(
+                $defaultDeliveryLocation->deliveryLocationNumber,
+                $defaultDeliveryLocation->self
+            );
         }
 
         return $this;
@@ -197,7 +201,6 @@ class Customer
 
         return $this;
     }
-
 
     public function getCurrency()
     {
@@ -232,7 +235,7 @@ class Customer
     {
         $this->paymentTerms = [
             'paymentTermNumber' => $paymentTerms->paymentTermsNumber,
-            'paymentTermSelf' => $paymentTerms->self
+            'paymentTermSelf' => $paymentTerms->self,
         ];
 
         return $this;
@@ -424,7 +427,7 @@ class Customer
     {
         $this->vatZone = [
             'vatZoneNumber' => $vatZone->vatZoneNumber,
-            'vatZoneSelf' => $vatZone->self
+            'vatZoneSelf' => $vatZone->self,
         ];
 
         return $this;

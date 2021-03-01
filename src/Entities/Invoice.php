@@ -3,7 +3,6 @@
 
 namespace Serringer\Economic\Entities;
 
-
 class Invoice
 {
     private $date;
@@ -22,10 +21,10 @@ class Invoice
     private $recipient = [];
     private $delivery = [];
     private $references = [
-        "other" => ""
+        "other" => "",
     ];
     private $layout = [
-        "layoutNumber" => null
+        "layoutNumber" => null,
     ];
     private $lines = [];
 
@@ -54,7 +53,6 @@ class Invoice
         $this->setLines($data['Lines'] ?? null);
     }
 
-
     /**
      * @return mixed
      */
@@ -70,6 +68,7 @@ class Invoice
     public function setDate($date)
     {
         $this->date = $date;
+
         return $this;
     }
 
@@ -88,6 +87,7 @@ class Invoice
     public function setCurrency($currency)
     {
         $this->currency = $currency;
+
         return $this;
     }
 
@@ -106,6 +106,7 @@ class Invoice
     public function setExchangeRate($exchangeRate)
     {
         $this->exchangeRate = $exchangeRate;
+
         return $this;
     }
 
@@ -124,6 +125,7 @@ class Invoice
     public function setNetAmount($netAmount)
     {
         $this->netAmount = $netAmount;
+
         return $this;
     }
 
@@ -142,6 +144,7 @@ class Invoice
     public function setNetAmountInBaseCurrency($netAmountInBaseCurrency)
     {
         $this->netAmountInBaseCurrency = $netAmountInBaseCurrency;
+
         return $this;
     }
 
@@ -160,6 +163,7 @@ class Invoice
     public function setGrossAmount($grossAmount)
     {
         $this->grossAmount = $grossAmount;
+
         return $this;
     }
 
@@ -178,6 +182,7 @@ class Invoice
     public function setMarginInBaseCurrency($marginInBaseCurrency)
     {
         $this->marginInBaseCurrency = $marginInBaseCurrency;
+
         return $this;
     }
 
@@ -196,6 +201,7 @@ class Invoice
     public function setMarginPercentage($marginPercentage)
     {
         $this->marginPercentage = $marginPercentage;
+
         return $this;
     }
 
@@ -214,6 +220,7 @@ class Invoice
     public function setVatAmount($vatAmount)
     {
         $this->vatAmount = $vatAmount;
+
         return $this;
     }
 
@@ -232,6 +239,7 @@ class Invoice
     public function setRoundingAmount($roundingAmount)
     {
         $this->roundingAmount = $roundingAmount;
+
         return $this;
     }
 
@@ -250,6 +258,7 @@ class Invoice
     public function setCostPriceInBaseCurrency($costPriceInBaseCurrency)
     {
         $this->costPriceInBaseCurrency = $costPriceInBaseCurrency;
+
         return $this;
     }
 
@@ -272,9 +281,10 @@ class Invoice
                 "paymentTermsNumber" => 1,
                 "daysOfCredit" => 14,
                 "name" => "Lobende maned 14 dage",
-                "paymentTermsType" => "invoiceMonth"
+                "paymentTermsType" => "invoiceMonth",
             ];
         $this->paymentTerms = $paymentTermsArray;
+
         return $this;
     }
 
@@ -293,9 +303,10 @@ class Invoice
     public function setCustomer(?array $customer): Invoice
     {
         $customerArray = $customer ?? [
-                "customerNumber" => null
+                "customerNumber" => null,
             ];
         $this->customer = $customerArray;
+
         return $this;
     }
 
@@ -322,11 +333,12 @@ class Invoice
                 "name" => "",
                 "vatZoneNumber" => null,
                 "enabledForCustomer" => true,
-                "enabledForSupplier" => true
+                "enabledForSupplier" => true,
             ],
         ];
 
         $this->recipient = $recipient;
+
         return $this;
     }
 
@@ -349,9 +361,10 @@ class Invoice
             "zip" => "",
             "city" => "",
             "country" => "",
-            "deliveryDate" => ""
+            "deliveryDate" => "",
         ];
         $this->delivery = $delivery;
+
         return $this;
     }
 
@@ -370,9 +383,10 @@ class Invoice
     public function setReferences(array $references): Invoice
     {
         $refferenceArray = [
-            "other" => ""
+            "other" => "",
         ];
         $this->references = $references;
+
         return $this;
     }
 
@@ -391,6 +405,7 @@ class Invoice
     public function setLayout(array $layout): Invoice
     {
         $this->layout = $layout;
+
         return $this;
     }
 
@@ -409,6 +424,7 @@ class Invoice
     public function setLines(array $lines): Invoice
     {
         $this->lines = $lines;
+
         return $this;
     }
 }

@@ -72,8 +72,11 @@ class Product
     public function setDepartmentalDistribution($departmentalDistribution = null)
     {
         if (isset($departmentalDistribution)) {
-            $this->departmentalDistribution = new DepartmentalDistribution($departmentalDistribution->departmentalDistributionNumber,
-                $departmentalDistribution->distributionType, $departmentalDistribution->self);
+            $this->departmentalDistribution = new DepartmentalDistribution(
+                $departmentalDistribution->departmentalDistributionNumber,
+                $departmentalDistribution->distributionType,
+                $departmentalDistribution->self
+            );
         }
 
         return $this;
@@ -93,8 +96,10 @@ class Product
         if (isset($this->departmentalDistribution)) {
             $this->departmentalDistribution->departmentalDistributionNumber = $departmentalDistributionNumber;
         } else {
-            $this->departmentalDistribution = $this->api->setClass('DepartmentalDistribution',
-                'departmentalDistributionNumber');
+            $this->departmentalDistribution = $this->api->setClass(
+                'DepartmentalDistribution',
+                'departmentalDistributionNumber'
+            );
             $this->departmentalDistribution->departmentalDistributionNumber = $departmentalDistributionNumber;
         }
 
@@ -130,9 +135,16 @@ class Product
     public function setInventory($inventory = null)
     {
         if (isset($inventory)) {
-            $this->inventory = new Inventory($inventory->available, $inventory->grossWeight, $inventory->inStock,
-                $inventory->netWeight, $inventory->orderedByCustomers, $inventory->orderedFromSuppliers,
-                $inventory->packageVolume, $inventory->recommendedPrice);
+            $this->inventory = new Inventory(
+                $inventory->available,
+                $inventory->grossWeight,
+                $inventory->inStock,
+                $inventory->netWeight,
+                $inventory->orderedByCustomers,
+                $inventory->orderedFromSuppliers,
+                $inventory->packageVolume,
+                $inventory->recommendedPrice
+            );
         }
 
         return $this;
@@ -279,7 +291,7 @@ class Product
                 "name" => $productGroup->name,
                 "products" => $productGroup->products,
                 "salesAccounts" => $productGroup->salesAccounts,
-                "self" => $productGroup->self
+                "self" => $productGroup->self,
             ];
         }
 
@@ -384,6 +396,7 @@ class Product
     public function setInvoices($invoices)
     {
         $this->invoices = $invoices;
+
         return $this;
     }
 }
