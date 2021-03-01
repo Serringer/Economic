@@ -1,21 +1,22 @@
 {
-    "name": ":vendor_name/:package_name",
-    "description": ":package_description",
+    "name": "serringer/economic",
+    "description": "An Economic Api wrapper",
     "keywords": [
-        ":vendor_name",
-        ":package_name"
+        "serringer",
+        "Economic"
     ],
-    "homepage": "https://github.com/:vendor_name/:package_name",
+    "homepage": "https://github.com/serringer/Economic",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
+            "name": "Regin Lyngsø",
+            "email": "serringer@gmail.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^7.4|^8.0"
+        "php": "^7.4|^8.0",
+        "guzzlehttp/guzzle": "^7.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.17",
@@ -25,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Skeleton\\": "src"
+            "Serringer\\Economic\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Skeleton\\Tests\\": "tests"
+            "Serringer\\Economic\\Tests\\": "tests"
         }
     },
     "scripts": {
