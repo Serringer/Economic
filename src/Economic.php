@@ -10,6 +10,7 @@ use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\ServerException;
 use Serringer\Economic\models\customer;
 use Serringer\Economic\Models\CustomerCollection;
+use Serringer\Economic\Models\DraftInvoice;
 use Serringer\Economic\Models\Product;
 use function PHPUnit\Framework\throwException;
 
@@ -172,6 +173,11 @@ class Economic
     public function paymentTypes(): PaymentType
     {
         return new PaymentType($this);
+    }
+
+    public function draftInvoices(): DraftInvoice
+    {
+        return new DraftInvoice($this);
     }
 
     public function currency(): Currency

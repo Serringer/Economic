@@ -86,10 +86,27 @@ class EconomicTest extends TestCase
 
         $customer = $economic->customer()->get(1000);
         $products = $economic->products()->all();
-        
-        $lines = new \Serringer\Economic\Entities\Lines(
 
-        );
+        $current_date = date('Y-m-d');
+        $due_date = date('Y-m-d', strtotime('+ 14 days'));
+
+        $draftInvoice = $economic->draftInvoices()
+            ->setCurrency('DKK')
+            ->setCustomer($customer)
+            ->setDate($current_date)
+            ->setDueDate($due_date)
+            ->setExchangeRate(1)
+            ->setGrossAmount(1)
+            ->setLayout(1)
+            ->setPaymentTermsNumber(1)
+            ->setRecipient(null)
+            ->setInvoiceLine(
+                $products[1]->getProductNumber(),
+                'produkt',
+                1,
+                100.00,
+                0.00
+            )->create();
     }
 }
 
